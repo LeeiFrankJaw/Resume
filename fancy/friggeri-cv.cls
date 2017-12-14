@@ -94,7 +94,7 @@
 % ]
 % {texgyreheros-regular.otf}
 
-\setmathfont{XITS Math}
+\setmathfont[Color=textcolor]{XITS Math}
 %%%
 
 %%%%%%%%%%

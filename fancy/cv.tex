@@ -17,35 +17,39 @@
 \usepackage[utf8]{inputenc}
 \usepackage{tikz}
 \usetikzlibrary{mindmap,shadows}
+
 \hypersetup{
-    unicode=true,
-    pdftitle={Lei’s Resume},
-    pdfauthor={Lei Zhao},
-    pdfsubject={},
-    pdfkeywords={resume},
-    pdfcreator={LuaLaTeX},
-    colorlinks=false,           % no lik border color
-    allbordercolors=white       % white border color for all
+  unicode=true,
+  pdftitle={Lei’s Resume},
+  pdfauthor={Lei Zhao},
+  pdfsubject={},
+  pdfkeywords={resume},
+  pdfcreator={LuaLaTeX},
+  colorlinks=false,           % no lik border color
+  allbordercolors=white       % white border color for all
 }
+
+\frenchspacing
+
 \smartdiagramset{
-    bubble center node font = \footnotesize,
-    bubble node font = \footnotesize,
-    % specifies the minimum size of the bubble center node
-    bubble center node size = 0.5cm,
-    %  specifies the minimum size of the bubbles
-    bubble node size = 0.5cm,
-    % specifies which is the distance among the bubble center node and the other bubbles
-    distance center/other bubbles = 0.3cm,
-    % sets the distance from the text to the border of the bubble center node
-    distance text center bubble = 0.5cm,
-    % set center bubble color
-    bubble center node color = pblue,
-    % define the list of colors usable in the diagram
-    set color list = {lightgray, materialcyan, orange, green, materialorange, materialteal, materialamber, materialindigo, materialgreen, materiallime},
-    % sets the opacity at which the bubbles are shown
-    bubble fill opacity = 0.6,
-    % sets the opacity at which the bubble text is shown
-    bubble text opacity = 0.5,
+  bubble center node font = \footnotesize,
+  bubble node font = \footnotesize,
+  % specifies the minimum size of the bubble center node
+  bubble center node size = 0.5cm,
+  % specifies the minimum size of the bubbles
+  bubble node size = 0.5cm,
+  % specifies which is the distance among the bubble center node and the other bubbles
+  distance center/other bubbles = 0.3cm,
+  % sets the distance from the text to the border of the bubble center node
+  distance text center bubble = 0.5cm,
+  % set center bubble color
+  bubble center node color = pblue,
+  % define the list of colors usable in the diagram
+  set color list = {lightgray, materialcyan, orange, green, materialorange, materialteal, materialamber, materialindigo, materialgreen, materiallime},
+  % sets the opacity at which the bubbles are shown
+  bubble fill opacity = 0.6,
+  % sets the opacity at which the bubble text is shown
+  bubble text opacity = 0.5,
 }
 
 \addbibresource{bibliography.bib}
@@ -53,8 +57,7 @@
 \definecolor{pblue}{HTML}{0395DE}
 
 \begin{document}
-\header{Lei}{Zhao}
-      {Polyglot Programmer}
+\header{Lei}{Zhao}{Polyglot Programmer}
       
 % Fake text to add separator      
 \fcolorbox{white}{gray}{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{%
