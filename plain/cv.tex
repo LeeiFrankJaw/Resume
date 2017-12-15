@@ -1,0 +1,155 @@
+\documentclass[a4paper,11pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage[math-style=TeX]{unicode-math}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\usepackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+\usepackage{ragged2e}
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{
+  pdftitle={Lei’s Resume},
+  pdfauthor={Lei Zhao},
+  pdfkeywords={resume},
+  pdfcreator={XeLaTeX},
+  hidelinks
+}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont{Fontin.otf}[
+  SmallCapsFont = Fontin-SmallCaps.otf,
+  BoldFont = Fontin-Bold.otf,
+  ItalicFont = Fontin-Italic.otf
+]
+\setmathfont{texgyrepagella-math.otf}
+%%%
+\usepackage{metalogo}
+\setlogokern{La}{-0.18em}
+\setlogokern{aT}{-0.09em}
+\setlogodrop[TeX]{0.27ex}
+
+\hyphenpenalty=500
+\frenchspacing
+
+%CV Sections inspired by:
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+
+\pagestyle{empty} % non-numbered pages
+
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Lei \textsc{Zhao}
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Personal Data}
+
+\begin{tabular}{rl}
+  % \textsc{Place and Date of Birth:} & Someplace, Italy  | dd Month 1912 \\
+  \textsc{Address:}   & Pudong New Area, Shanghai, China \\
+  \textsc{Phone:}     & +1 319 555 0128\\
+  \textsc{email:}     & \href{mailto:lei.zhao@example.com}{\color{linkcolour}lei.zhao@example.com} \\
+  \textsc{StackOverflow:} & \href{https://stackoverflow.com/users/2117531/lei-zhao}{\color{linkcolour}stackoverflow.com/u/2117531} \\
+  \textsc{GitHub:} & \href{https://github.com/LeeiFrankJaw}{\color{linkcolour}github.com/LeeiFrankJaw}
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Work Experience}
+\begin{tabular}{r|p{11cm}}
+  \textsc{Feb--Dec 2017} & Python programmer at \href{https://www.mesoor.com/}{\textsc{Mesoor}}, Shanghai \\
+                         & \emph{Web Crawler and Front-end Development}\\
+                         & \footnotesize I wrote web crawler using pyspider to crawl job descriptions from several major Chinese employment-related website like \href{http://www.chinahr.com/}{chinahr.com}, \href{https://www.zhaopin.com/}{zhaopin.com}, \href{https://www.lagou.com/}{lagou.com}, and so on so forth.  I implemented an automatic login service using w3c \href{https://github.com/w3c/web-platform-tests/pull/6743}{web driver} technology and help our client import their resumes into our own system.  I also participated in a lot front-end website development with both angular/typescript and vanilla javascript and some back-end development with flask and hug.  I was also often assigned tasks related to database (PostgreSQL primarily, also MySQL) operation and migration.\\
+  \multicolumn{2}{c}{} \\
+  \textsc{Nov 2014--}    & Clojure programmer at \href{http://www.starworking.com/}{\textsc{Starworking}}, Shanghai \\
+  \textsc{Feb 2015}      & \emph{Full-stack Development}\\
+                         & \footnotesize Develop full-stack website with Clojure and related technology while learning Clojure on the go.  There was also some media coverage by \href{http://www.globaltimes.cn/content/871111.shtml}{Global Times} on how I found this internship.
+\end{tabular}
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rp{11.5cm}}
+  \textsc{Sept 2014--} & \href{http://www.chsi.com.cn/en/news/201312/20131202/663878204.html}{Zhuanke Certificate of Graduation} in \textsc{Computer Science}\\
+  \textsc{Jun 2017}    & \textbf{SJTU}, Shanghai, China \\
+                       & \footnotesize This certificate, which I attained by self-taught examination, is equivalent to an Associate's degree.  Upon completion, I learned C, RDBMS, data structures, discrete math, computer organization, operating system, networking, digital logic, 8086 interfacing, and so on.\\&\\
+  \textsc{Aug 2011--}  & \textbf{Cornell College}, Mount Vernon, IA\\
+  \textsc{Feb 2012}    & \footnotesize Since I had only one semester here, I learned about Java and formal logic, and became an Emacs and Linux user.
+\end{tabular}
+
+\section{Computer Skills}
+\begin{tabular}{rp{9cm}}
+  Basic Knowledge:& Bash, \textsc{gnu} toolchain, XQuery, x86\,\textsc{isa}, Redis, MongoDB\\
+  Intermediate Knowledge:& Python, JavasScript, PostgreSQL, Clojure, C, Angular, Java, Scala, \LaTeX
+\end{tabular}
+
+%Section: Languages
+\section{Languages}
+\begin{tabular}{rl}
+  \textsc{Chinese:} & Native\\
+  \textsc{English:} & Proficient\\
+  \textsc{Russian:} & Rudimentary
+\end{tabular}
+
+%Section: Awards and additional info
+\section{Honors and Awards}
+\begin{tabular}{rp{11.6cm}}
+  \textsc{Nov 2009} & 2nd Prize in National Olympiad in Informatics in Provinces (\textsc{noip})\\
+                    & \textbf{China Computer Federation}\\
+                    & \footnotesize \textsc{noip} is an annual competitive programming competition for secondary school students.  The contest consists of five hours of programming on an individual basis, solving problems of an algorithmic nature.
+\end{tabular}
+
+\section{Certifications}
+\begin{tabular}{rp{11.6cm}}
+  \textsc{May 2015}  & \href{https://s3.amazonaws.com/verify.edx.org/downloads/5eb2696ec8874930bb0fda0b8b6756b6/Certificate.pdf}{Linear Algebra - Foundations to Frontiers}\hfill\textbf{edX}\\
+                     & \footnotesize This was my first exposure to MATLAB and I learned about FLAME methodology for systematically developing dense linear algebra library.\\&\\
+  \textsc{Apr 2015}  & \RaggedRight \href{https://s3.amazonaws.com/accredible_user_certificate/certificates/144339/original/Coursera_matrix_2015.pdf}{Coding the Matrix: Linear Algebra through Computer Science Applications}\hfill\textbf{Coursera}\\
+                     & \footnotesize I learned many applications of linear algebra in a variety of fields like computer vision, cryptography, graphics, information retrieval, and so on.\\&\\
+  \textsc{Sept 2014} & \href{https://s3.amazonaws.com/accredible_user_certificate/certificates/53611/original/Coursera_hwswinterface_2014.pdf}{The Hardware/Software Interface}\hfill\textbf{Coursera}\\
+                     & \footnotesize I learned key computational abstraction levels below modern high-level languages, number representation, assembly language, memory management, the operating system process model, high-level machine architecture including the memory hierarchy, and how high-level languages are implemented.  I was very sad to know in 2015 that Prof.\ Borriello passed away after six-year fight against colon cancer.\\&\\
+  \textsc{Jun 2014}  & \href{https://www.coursera.org/account/accomplishments/records/jeAXpfyLDdj7TBYK}{Functional Programming Principles in Scala}\hfill\textbf{Coursera}\\
+                     & \footnotesize In addition to some hands-on experiences with Scala, I learned about proofs of invariants for functional programs and how to trace execution symbolically.\\&\\
+  \textsc{Jun 2014}  & \href{https://www.coursera.org/account/accomplishments/records/AqU3pfW4qRTd8FzE}{Logic: Language and Information 2}\hfill\textbf{Coursera}\\
+                     & \footnotesize This is my first officially verified MOOC\@.  I learned various application of formal logic in different fields such as EE, CS, linguistics, philosophy, and math.  Specifically, I learned Robinson's unification and resolution and played with SWI-Prolog.  This course also deepened my understanding of \(\epsilon\textit{-}\delta\) language often seen in mathematical analysis.\\&\\
+  \textsc{Jun 2013}  & \href{https://s3.amazonaws.com/verify.edx.org/downloads/eedec1d10b884139876bee106313142c/Certificate.pdf}{Introduction to Computer Science and Programming}\hfill\textbf{edX}\\
+                     & \footnotesize This course broadened my horizons and introduced me to many topics in computer science.\\&\\
+  \textsc{Nov 2012}  & \href{https://s3.amazonaws.com/accredible_user_certificate/certificates/48300/original/IntroLogic.pdf}{Introduction to Logic}\hfill\textbf{Coursera}\\
+                     & I was one of earliest MOOC learners in China.  Perhaps due to my life-long interest in formal logic, this course was one of my first MOOCs.
+\end{tabular}
+
+\end{document}
+
+% Local Variables:
+% TeX-engine: xetex
+% End:
