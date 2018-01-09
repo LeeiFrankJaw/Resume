@@ -221,3 +221,8 @@ TSWLatexianTemp*
 
 # project specific
 /*.zip
+
+# word processor files
+*.doc
+*.docx
+*.odt
