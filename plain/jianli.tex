@@ -9,9 +9,16 @@
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[big]{layaureo} 				%better formatting of the A4 page
 % an alternative to Layaureo can be ** \usepackage{fullpage} **
-\usepackage{supertabular} 				%for Grades
+\usepackage{array}
+\usepackage{tabularx}
 \usepackage{titlesec}					%custom \section
 \usepackage{ragged2e}
+
+% \newcolumntype{R}{>{\hsize=90pt \raggedleft\arraybackslash}X}
+% \newcolumntype{P}{p{280pt}}
+\newenvironment{tabularcv}{%
+  \tabularx{\textwidth}{rX}
+  }{\endtabularx}
 
 %Setup hyperref package, and colours for links
 \usepackage{hyperref}
@@ -80,19 +87,18 @@
 %--------------------SECTIONS-----------------------------------
 %Section: Personal Data
 \section{个人信息}
-
-\begin{tabular}{rl}
+\begin{tabularcv}
   % \textsc{Place and Date of Birth:} & Someplace, Italy  | dd Month 1912 \\
   \textsc{地址}          & 上海市浦东新区 \\
   \textsc{手机}          & +1 319 555 0128 \\
   \textsc{电邮}          & \href{mailto:lei.zhao@example.com}{\color{linkcolour}lei.zhao@example.com} \\
   \textsc{StackOverflow} & \href{https://stackoverflow.com/users/2117531/lei-zhao}{\color{linkcolour}stackoverflow.com/u/2117531} \\
   \textsc{GitHub}        & \href{https://github.com/LeeiFrankJaw}{\color{linkcolour}github.com/LeeiFrankJaw}
-\end{tabular}
+\end{tabularcv}
 
 %Section: Work Experience at the top
 \section{工作经历}
-\begin{tabular}{r|p{11cm}}
+\begin{tabularx}{\textwidth}{r|X}
   2017年2月    & \href{https://www.mesoor.com/}{麦穗人工智能}（上海）\hfill Python程序员 \\
   至10月       & \emph{爬虫和前端开发}\\
                & \footnotesize 使用pyspider编写爬虫，从主要的中文招聘网站（如\href{http://www.chinahr.com/}{中华英才}、\href{https://www.zhaopin.com/}{智联}、\href{https://www.lagou.com/}{拉勾}等）爬取职位描述。我用W3C WebDriver实现了一个自动登录系统，帮助我们客户从这些平台导入简历到我们的系统，并且向W3C提交了一个\href{https://github.com/w3c/web-platform-tests/pull/6743}{修复}。我参与了前端网站开发，使用Angular/TypeScript和纯JavaScript。我也参与了一些后端开发，使用flask和hug。我也经常被分配一些任务，这些任务与数据库（主要是PostgreSQL，也有一些MySQL）的操作、迁移相关。\\
@@ -100,41 +106,41 @@
   2014年11月至 & \href{http://www.starworking.com/}{星畅科技}（上海）\hfill Clojure程序员实习 \\
   2015年2月    & \emph{全栈开发}\\
                & \footnotesize 在一边学习Clojure的过程中，使用Clojure和相关技术完成全站开发。有关我如何得到这次实习，环球时报在当时还有一些\href{http://www.globaltimes.cn/content/871111.shtml}{报道}。
-\end{tabular}
+\end{tabularx}
 
 %Section: Education
 \section{教育}
-\begin{tabular}{rp{11.5cm}}
+\begin{tabularcv}
   2017年6月 & 计算机及应用\href{http://www.chsi.com.cn/en/news/201312/20131202/663878204.html}{专科}\quad 上海交通大学\\
             & \footnotesize 这个学历是我通过自学考试得到的。在毕业时，我已经完成了C、RDBMS、数据结构、离散数学、计算机组成、操作系统、网络、数字电路、8086接口技术等课程的学习。\\&\\
   2011年8月至 & \href{http://www.cornellcollege.edu/}{康奈尔学院}\quad 爱荷华州芒特弗农市\\
   2012年2月   & \footnotesize 这个学校和那个康奈尔大学没有任何关系，而是一个独立的文理学院。我在这里只上了一个学期，我学习了Java和形式逻辑并且从此成为了一名Emacs和Linux用户。
-\end{tabular}
+\end{tabularcv}
 
 \section{技能}
-\begin{tabular}{rp{12cm}}
-  基本 & Bash, GNU工具链, XQuery, x86\,指令集, Redis, MongoDB, Docker, OLAP\\
-  中等 & Python, JavasScript, PostgreSQL, MySQL, Clojure, C, Angular, Java, Scala, \LaTeX
-\end{tabular}
+\begin{tabularcv}
+  基本 & Bash, GNU工具链, XQuery, x86\,指令集, Redis, MongoDB, Docker, OLAP \\
+  中等 & Python, JavasScript, PostgreSQL, MySQL, Clojure, C, Java, Angular, Scala, \LaTeX
+\end{tabularcv}
 
 %Section: Languages
 \section{语言}
-\begin{tabular}{rl}
+\begin{tabularcv}
   中文 & 母语\\
   英文 & 流利\\
   俄文 & 基本
-\end{tabular}
+\end{tabularcv}
 
 %Section: Awards and additional info
 \section{曾获奖项}
-\begin{tabular}{rp{11.6cm}}
+\begin{tabularcv}
   2009年11月 & 全国青少年信息学奥林匹克联赛 (NOIP) 二等奖\\
              & 中国计算机学会\\
              & \footnotesize NOIP是一年一度中学生编程竞赛。该竞赛为个人赛，共5个小时，解答3道算法类的问题。
-\end{tabular}
+\end{tabularcv}
 
 \section{慕课经历}
-\begin{tabular}{rp{11.6cm}}
+\begin{tabularcv}
   2015年5月  & \href{https://s3.amazonaws.com/verify.edx.org/downloads/5eb2696ec8874930bb0fda0b8b6756b6/Certificate.pdf}{线性代数——从基础到前沿}\hfill\textbf{edX}\\
              & \footnotesize 这是我首次接触MATLAB。我学习了使用 \href{http://www.cs.utexas.edu/~flame/web/}{FLAME} 方法系统地开发稠密线性代数库。\\&\\
   2015年4月  & \href{https://s3.amazonaws.com/accredible_user_certificate/certificates/144339/original/Coursera_matrix_2015.pdf}{编码矩阵：计算机科学应用中的线性代数}\hfill\textbf{Coursera}\\
@@ -149,7 +155,7 @@
              & \footnotesize 这门课拓宽了我的视野，向我介绍了计算机科学中的诸多话题。\\&\\
   2012年11月 & \href{https://s3.amazonaws.com/accredible_user_certificate/certificates/48300/original/IntroLogic.pdf}{逻辑学导论}\hfill\textbf{Coursera}\\
              & \footnotesize 我是国内最早的慕课学习者之一。可能是由于我对形式逻辑的终身兴趣，这门课是我最早完成的慕课之一。
-\end{tabular}
+\end{tabularcv}
 
 \end{document}
 

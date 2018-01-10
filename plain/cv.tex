@@ -9,9 +9,13 @@
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[big]{layaureo} 				%better formatting of the A4 page
 % an alternative to Layaureo can be ** \usepackage{fullpage} **
-\usepackage{supertabular} 				%for Grades
+\usepackage{tabularx}
 \usepackage{titlesec}					%custom \section
 \usepackage{ragged2e}
+
+\newenvironment{tabularcv}{%
+  \tabularx{.935\textwidth}{rX}
+  }{\endtabularx}
 
 %Setup hyperref package, and colours for links
 \usepackage{hyperref}
@@ -77,18 +81,18 @@
 %Section: Personal Data
 \section{Personal Data}
 
-\begin{tabular}{rl}
+\begin{tabularcv}
   % \textsc{Place and Date of Birth:} & Someplace, Italy  | dd Month 1912 \\
   \textsc{Address:}   & Pudong New Area, Shanghai, China \\
   \textsc{Phone:}     & +1 319 555 0128\\
   \textsc{email:}     & \href{mailto:lei.zhao@example.com}{\color{linkcolour}lei.zhao@example.com} \\
   \textsc{StackOverflow:} & \href{https://stackoverflow.com/users/2117531/lei-zhao}{\color{linkcolour}stackoverflow.com/u/2117531} \\
   \textsc{GitHub:} & \href{https://github.com/LeeiFrankJaw}{\color{linkcolour}github.com/LeeiFrankJaw}
-\end{tabular}
+\end{tabularcv}
 
 %Section: Work Experience at the top
 \section{Work Experience}
-\begin{tabular}{r|p{11cm}}
+\begin{tabularx}{.935\textwidth}{r|X}
   \textsc{Feb--Dec 2017} & Python programmer at \href{https://www.mesoor.com/}{\textsc{Mesoor}}, Shanghai \\
                          & \emph{Web Crawler and Front-end Development}\\
                          & \footnotesize I wrote web crawler using pyspider to crawl job descriptions from several major Chinese employment-related website like \href{http://www.chinahr.com/}{chinahr.com}, \href{https://www.zhaopin.com/}{zhaopin.com}, \href{https://www.lagou.com/}{lagou.com}, and so on so forth.  I implemented an automatic login service using w3c \href{https://github.com/w3c/web-platform-tests/pull/6743}{web driver} technology and help our client import their resumes into our own system.  I also participated in a lot front-end website development with both angular/typescript and vanilla javascript and some back-end development with flask and hug.  I was also often assigned tasks related to database (PostgreSQL primarily, also MySQL) operation and migration.\\
@@ -96,42 +100,42 @@
   \textsc{Nov 2014--}    & Clojure programmer at \href{http://www.starworking.com/}{\textsc{Starworking}}, Shanghai \\
   \textsc{Feb 2015}      & \emph{Full-stack Development}\\
                          & \footnotesize Develop full-stack website with Clojure and related technology while learning Clojure on the go.  There was also some media coverage by \href{http://www.globaltimes.cn/content/871111.shtml}{Global Times} on how I found this internship.
-\end{tabular}
+\end{tabularx}
 
 %Section: Education
 \section{Education}
-\begin{tabular}{rp{11.5cm}}
+\begin{tabularcv}
   \textsc{Sept 2014--} & \href{http://www.chsi.com.cn/en/news/201312/20131202/663878204.html}{Zhuanke Certificate of Graduation} in \textsc{Computer Science}\\
   \textsc{Jun 2017}    & \textbf{SJTU}, Shanghai, China \\
                        & \footnotesize This certificate, which I attained by self-taught examination, is equivalent to an Associate's degree.  Upon completion, I learned C, RDBMS, data structures, discrete math, computer organization, operating system, networking, digital logic, 8086 interfacing, and so on.\\&\\
   \textsc{Aug 2011--}  & \textbf{Cornell College}, Mount Vernon, IA\\
   \textsc{Feb 2012}    & \footnotesize Since I had only one semester here, I learned about Java and formal logic, and became an Emacs and Linux user.
-\end{tabular}
+\end{tabularcv}
 
 \section{Computer Skills}
-\begin{tabular}{rp{9cm}}
+\begin{tabularcv}
   Basic Knowledge:& Bash, \textsc{gnu} toolchain, XQuery, x86\,\textsc{isa}, Redis, MongoDB\\
   Intermediate Knowledge:& Python, JavasScript, PostgreSQL, MySQL, Clojure, C, Angular, Java, Scala, \LaTeX
-\end{tabular}
+\end{tabularcv}
 
 %Section: Languages
 \section{Languages}
-\begin{tabular}{rl}
+\begin{tabularcv}
   \textsc{Chinese:} & Native\\
   \textsc{English:} & Proficient\\
   \textsc{Russian:} & Rudimentary
-\end{tabular}
+\end{tabularcv}
 
 %Section: Awards and additional info
 \section{Honors and Awards}
-\begin{tabular}{rp{11.6cm}}
+\begin{tabularcv}
   \textsc{Nov 2009} & 2nd Prize in National Olympiad in Informatics in Provinces (\textsc{noip})\\
                     & \textbf{China Computer Federation}\\
                     & \footnotesize \textsc{noip} is an annual competitive programming competition for secondary school students.  The contest consists of five hours of programming on an individual basis, solving problems of an algorithmic nature.
-\end{tabular}
+\end{tabularcv}
 
 \section{Certifications}
-\begin{tabular}{rp{11.6cm}}
+\begin{tabularcv}
   \textsc{May 2015}  & \href{https://s3.amazonaws.com/verify.edx.org/downloads/5eb2696ec8874930bb0fda0b8b6756b6/Certificate.pdf}{Linear Algebra - Foundations to Frontiers}\hfill\textbf{edX}\\
                      & \footnotesize This was my first exposure to MATLAB and I learned about FLAME methodology for systematically developing dense linear algebra library.\\&\\
   \textsc{Apr 2015}  & \RaggedRight \href{https://s3.amazonaws.com/accredible_user_certificate/certificates/144339/original/Coursera_matrix_2015.pdf}{Coding the Matrix: Linear Algebra through Computer Science Applications}\hfill\textbf{Coursera}\\
@@ -146,7 +150,7 @@
                      & \footnotesize This course broadened my horizons and introduced me to many topics in computer science.\\&\\
   \textsc{Nov 2012}  & \href{https://s3.amazonaws.com/accredible_user_certificate/certificates/48300/original/IntroLogic.pdf}{Introduction to Logic}\hfill\textbf{Coursera}\\
                      & \footnotesize I was one of earliest MOOC learners in China.  Perhaps due to my life-long interest in formal logic, this course was one of my first MOOCs.
-\end{tabular}
+\end{tabularcv}
 
 \end{document}
 
