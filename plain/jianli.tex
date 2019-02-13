@@ -33,18 +33,21 @@
 
 %FONTS
 \defaultfontfeatures{Mapping=tex-text}
-%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+\setmainfont{Palatino Linotype} % [Numbers=OldStyle]
 %%% modified for Karol Kozioł for ShareLaTeX use
-\setmainfont{Fontin.otf}[
-  SmallCapsFont = Fontin-SmallCaps.otf,
-  BoldFont = Fontin-Bold.otf,
-  ItalicFont = Fontin-Italic.otf
-]
+% \setmainfont{Fontin.otf}[
+%   SmallCapsFont = Fontin-SmallCaps.otf,
+%   BoldFont = Fontin-Bold.otf,
+%   ItalicFont = Fontin-Italic.otf
+% ]
 \setmathfont{texgyrepagella-math.otf}
 %%%
 
 \usepackage[CJKecglue=\,]{xeCJK}
-\setCJKmainfont{Noto Sans CJK SC}
+\setCJKmainfont{Songti SC}[
+  BoldFont = * Black,
+  ItalicFont = * Bold
+]
 
 \usepackage{metalogo}
 \setlogokern{La}{-0.18em}
