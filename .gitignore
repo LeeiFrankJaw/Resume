@@ -226,3 +226,6 @@ TSWLatexianTemp*
 *.doc
 *.docx
 *.odt
+
+# font dumps
+fontdump*.lua

@@ -4,7 +4,7 @@
 \usepackage{marvosym}
 \usepackage[math-style=TeX]{unicode-math}
 \usepackage{fontspec} 					%for loading fonts
-\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\usepackage{realscripts,url,parskip} 	%other packages for formatting
 \usepackage{color,graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[big]{layaureo} 				%better formatting of the A4 page
@@ -21,16 +21,18 @@
 \usepackage{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{
+  pdfencoding=auto,
   pdftitle={Lei’s Resume},
   pdfauthor={Lei Zhao},
   pdfkeywords={resume},
-  pdfcreator={XeLaTeX},
+  pdfcreator={LuaLaTeX},
   hidelinks
 }
 
 %FONTS
-\defaultfontfeatures{Mapping=tex-text}
-\setmainfont{Palatino Linotype}[Numbers=OldStyle]
+\defaultfontfeatures{Ligatures=TeX,Numbers=OldStyle}
+\setmainfont{Palatino Linotype}
+\directlua{dofile("palatino.lua")}
 %%% modified for Karol Kozioł for ShareLaTeX use
 % \setmainfont{Fontin.otf}[
 %   SmallCapsFont = Fontin-SmallCaps.otf,
@@ -38,11 +40,12 @@
 %   ItalicFont = Fontin-Italic.otf
 % ]
 \setmathfont{texgyrepagella-math.otf}
+
 %%%
 \usepackage{metalogo}
-\setlogokern{La}{-0.18em}
-\setlogokern{aT}{-0.09em}
-\setlogodrop[TeX]{0.27ex}
+% \setlogokern{La}{-0.18em}
+% \setlogokern{aT}{-0.09em}
+% \setlogodrop[TeX]{0.27ex}
 
 \hyphenpenalty=687
 \frenchspacing
@@ -85,7 +88,7 @@
   % \textsc{Place and Date of Birth:} & Someplace, Italy  | dd Month 1912 \\
   \textsc{Address:}   & Minhang Dist., Shanghai, China \\
   \textsc{Phone:}     & +1 319 555 0128\\
-  \textsc{email:}     & \href{mailto:lei.zhao@example.com}{\color{linkcolour}lei.zhao@example.com} \\
+  \textsc{Email:}     & \href{mailto:lei.zhao@example.com}{\color{linkcolour}lei.zhao@example.com} \\
   \textsc{StackOverflow:} & \href{https://stackoverflow.com/users/2117531/lei-zhao}{\color{linkcolour}stackoverflow.com/u/2117531} \\
   \textsc{GitHub:} & \href{https://github.com/LeeiFrankJaw}{\color{linkcolour}github.com/LeeiFrankJaw}
 \end{tabularcv}
@@ -163,6 +166,6 @@
 \end{document}
 
 % Local Variables:
-% TeX-engine: xetex
+% TeX-engine: luatex
 % electric-indent-mode: nil
 % End:
