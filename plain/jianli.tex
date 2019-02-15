@@ -3,11 +3,11 @@
 %A Few Useful Packages
 \usepackage{marvosym}
 \usepackage[math-style=TeX]{unicode-math}
-\usepackage{fontspec} 					%for loading fonts
-\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\usepackage{luatexja-fontspec}          %for loading fonts
+\usepackage{realscripts,url,parskip} 	%other packages for formatting
 \usepackage{color,graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[big]{layaureo} 				%better formatting of the A4 page
+\usepackage[big]{layaureo}              %better formatting of the A4 page
 % an alternative to Layaureo can be ** \usepackage{fullpage} **
 \usepackage{array}
 \usepackage{tabularx}
@@ -24,16 +24,18 @@
 \usepackage{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{
+  pdfencoding=auto,
   pdftitle={赵磊的简历},
   pdfauthor={赵磊},
   pdfkeywords={简历},
-  pdfcreator={XeLaTeX},
+  pdfcreator={LuaLaTeX},
   hidelinks
 }
 
 %FONTS
-\defaultfontfeatures{Mapping=tex-text}
-\setmainfont{Palatino Linotype} % [Numbers=OldStyle]
+\directlua{dofile("palatino.lua")}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{Palatino Linotype}
 %%% modified for Karol Kozioł for ShareLaTeX use
 % \setmainfont{Fontin.otf}[
 %   SmallCapsFont = Fontin-SmallCaps.otf,
@@ -43,16 +45,23 @@
 \setmathfont{texgyrepagella-math.otf}
 %%%
 
-\usepackage[CJKecglue=\,]{xeCJK}
-\setCJKmainfont{Songti SC}[
-  BoldFont = * Black,
-  ItalicFont = * Bold
-]
+\setmainjfont{Songti SC}
+\setsansjfont{Songti SC Bold}
+\ltjsetparameter{
+  kanjiskip={0.6pt plus 0.4pt minus 0.4pt},
+  xkanjiskip={0.13\zw plus 1pt minus 1pt}}
+% \def\ltj@stdmcfont{name:Songti SC}
+% \def\ltj@stdgtfont{name:Songti SC}
+% \usepackage[CJKecglue=\,]{xeCJK}
+% \setCJKmainfont{Songti SC}[
+%   BoldFont = * Black,
+%   ItalicFont = * Bold
+% ]
 
 \usepackage{metalogo}
-\setlogokern{La}{-0.18em}
-\setlogokern{aT}{-0.09em}
-\setlogodrop[TeX]{0.27ex}
+% \setlogokern{La}{-0.18em}
+% \setlogokern{aT}{-0.09em}
+% \setlogodrop[TeX]{0.27ex}
 
 \hyphenpenalty=500
 \frenchspacing
@@ -171,5 +180,5 @@
 \end{document}
 
 % Local Variables:
-% TeX-engine: xetex
+% TeX-engine: luatex
 % End:
