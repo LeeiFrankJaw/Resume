@@ -229,3 +229,6 @@ TSWLatexianTemp*
 
 # font dumps
 fontdump*.lua
+
+# macOS
+.DS_Store
