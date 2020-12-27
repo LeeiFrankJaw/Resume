@@ -31,7 +31,7 @@
 %FONTS
 \defaultfontfeatures{Ligatures=TeX,Numbers=OldStyle}
 \setmainfont{Palatino Linotype}
-\directlua{dofile("palatino.lua")}
+% \directlua{dofile("palatino.lua")}
 %%% modified for Karol Kozioł for ShareLaTeX use
 % \setmainfont{Fontin.otf}[
 %   SmallCapsFont = Fontin-SmallCaps.otf,
@@ -57,15 +57,15 @@
 %\addtolength{\voffset}{-1.3cm}
 
 %Italian hyphenation for the word: ''corporations''
-\hyphenation{im-pre-se}
+% \hyphenation{im-pre-se}
 
 %-------------WATERMARK TEST [**not part of a CV**]---------------
-\usepackage[absolute]{textpos}
-
-\setlength{\TPHorizModule}{30mm}
-\setlength{\TPVertModule}{\TPHorizModule}
-\textblockorigin{2mm}{0.65\paperheight}
-\setlength{\parindent}{0pt}
+% \usepackage[absolute]{textpos}
+%
+% \setlength{\TPHorizModule}{30mm}
+% \setlength{\TPVertModule}{\TPHorizModule}
+% \textblockorigin{2mm}{0.65\paperheight}
+% \setlength{\parindent}{0pt}
 
 %--------------------BEGIN DOCUMENT----------------------
 \begin{document}
@@ -86,8 +86,8 @@
 \begin{tabularcv}
   % \textsc{Place and Date of Birth:} & Someplace, Italy  | dd Month 1912 \\
   \textsc{Address:}   & Minhang Dist., Shanghai, China \\
-  \textsc{Phone:}     & +1 319 555 0128\\
-  \textsc{Email:}     & \href{mailto:lei.zhao@example.com}{\color{linkcolour}lei.zhao@example.com} \\
+  % \textsc{Phone:}     & +1 319 555 0128\\
+  \textsc{Email:}     & \href{mailto:leizhao6@acm.org}{\color{linkcolour}leizhao6@acm.org} \\
   \textsc{StackOverflow:} & \href{https://stackoverflow.com/users/2117531/lei-zhao}{\color{linkcolour}stackoverflow.com/u/2117531} \\
   \textsc{GitHub:} & \href{https://github.com/LeeiFrankJaw}{\color{linkcolour}github.com/LeeiFrankJaw}
 \end{tabularcv}
@@ -99,9 +99,9 @@
   \textsc{Jan} 2019      & \emph{GitLab and Pagure Development} \\
                          & \footnotesize I investigated GitLab and Pagure, wrote documentation for internal use, and made necessary changes to satisfy FSF's goals.\\
   \multicolumn{2}{c}{} \\
-  \textsc{Jan--Jun} 2018 & \textsc{olap} and \textsc{etl} programmer at \href{https://www.haomaiyi.com/}{\scshape Haomaiyi}, Shanghai \\
+  \textsc{Jan--Jun} 2018 & OLAP and ETL programmer at \href{https://www.haomaiyi.com/}{\scshape Haomaiyi}, Shanghai \\
                          & \emph{Back-end and Warehouse Development} \\
-                         & \footnotesize I extracted data from different sources, transformed them into desired forms, and loaded them into data warehouse for later analytics.  I helped set up the \href{https://superset.incubator.apache.org/}{Superset} BI platform, did some \href{https://en.wikipedia.org/wiki/Online_analytical_processing}{\scshape olap}, and provided results to our clients through web \textsc{api}s.\\
+                         & \footnotesize I extracted data from different sources, transformed them into desired forms, and loaded them into data warehouse for later analytics.  I helped set up the \href{https://superset.incubator.apache.org/}{Superset} BI platform, did some \href{https://en.wikipedia.org/wiki/Online_analytical_processing}{\scshape olap}, and provided results to our clients through web APIs.\\
   \multicolumn{2}{c}{} \\
   \textsc{Feb--Dec} 2017 & Python programmer at \href{https://www.mesoor.com/}{\scshape Mesoor}, Shanghai \\
                          & \emph{Web Crawler and Front-end Development}\\
@@ -117,31 +117,31 @@
 \begin{tabularcv}
   \textsc{Sept} 2014-- & \href{http://www.chsi.com.cn/en/news/201312/20131202/663878204.html}{Zhuanke Certificate of Graduation} in \textsc{Computer Science}\\
   \textsc{Jun} 2017    & \textbf{SJTU}, Shanghai, China \\
-                       & \footnotesize This certificate, which I attained by self-taught examination, is equivalent to an Associate's degree.  Upon completion, I learned C, \textsc{rdbms}, data structures, discrete math, computer organization, operating system, networking, digital logic, 8086 interfacing, and so on.\\&\\
+                       & \footnotesize This certificate, which I attained by self-taught examination, is equivalent to an Associate's degree.  Upon completion, I learned C, RDBMS, data structures, discrete math, computer organization, operating system, networking, digital logic, 8086 interfacing, and so on.\\&\\
   \textsc{Aug} 2011--  & \textbf{Cornell College}, Mount Vernon, IA\\
   \textsc{Feb} 2012    & \footnotesize Since I had only one semester here, I learned about Java and formal logic, and became an Emacs and Linux user.
 \end{tabularcv}
 
 \section{Computer Skills}
 \begin{tabularcv}
-  Basic Knowledge:& Bash, \textsc{gnu}\,toolchain, XQuery, x86\,\textsc{isa}, Redis, MongoDB\\
-  Intermediate Knowledge:& Python, JavasScript, \textsc{sql}, C, Clojure, Angular, Java, Scala, \LaTeX, \textsc{olap}, \textsc{etl}
+  Basic Knowledge:& Bash, GNU toolchain, XQuery, x86 ISA, Redis, MongoDB\\
+  Intermediate Knowledge:& Python, JavasScript, SQL, C, Clojure, Angular, Java, Scala, \LaTeX, OLAP, ETL
 \end{tabularcv}
 
 %Section: Languages
 \section{Languages}
 \begin{tabularcv}
   \textsc{Chinese:} & Native\\
-  \textsc{English:} & Proficient\\
-  \textsc{Russian:} & Rudimentary
+  \textsc{English:} & Proficient
+  % \textsc{Russian:} & Rudimentary
 \end{tabularcv}
 
 %Section: Awards and additional info
 \section{Honors and Awards}
 \begin{tabularcv}
-  \textsc{Nov} 2009 & 2nd Prize in National Olympiad in Informatics in Provinces (\textsc{noip})\\
+  \textsc{Nov} 2009 & 2nd Prize in National Olympiad in Informatics in Provinces (NOIP)\\
                     & \textbf{China Computer Federation}\\
-                    & \footnotesize \textsc{noip} is an annual competitive programming competition for secondary school students.  The contest consists of five hours of programming on an individual basis, solving problems of an algorithmic nature.
+                    & \footnotesize NOIP is an annual competitive programming competition for secondary school students.  The contest consists of five hours of programming on an individual basis, solving problems of an algorithmic nature.
 \end{tabularcv}
 
 \section{Certifications}
